@@ -1,0 +1,1382 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/preferred_size.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter_webview_plugin/src/javascript_message.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__flutter_webview_plugin__src__webview_scaffold_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__preferred_size$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter_webview_plugin__src__javascript_message$46dart, packages__flutter__src__services__system_channels$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
+  const collection = dart_sdk.collection;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const routes = packages__flutter__src__widgets__widget_span$46dart.src__widgets__routes;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const preferred_size = packages__flutter__src__widgets__preferred_size$46dart.src__widgets__preferred_size;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
+  const javascript_message = packages__flutter_webview_plugin__src__javascript_message$46dart.src__javascript_message;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  var webview_scaffold = Object.create(dart.library);
+  var javascript_channel = Object.create(dart.library);
+  var base = Object.create(dart.library);
+  var flutter_webview_plugin = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  var $_set = dartx._set;
+  var $forEach = dartx.forEach;
+  var $toList = dartx.toList;
+  var $clear = dartx.clear;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $split = dartx.split;
+  var $_get = dartx._get;
+  var $map = dartx.map;
+  var $toSet = dartx.toSet;
+  var $containsKey = dartx.containsKey;
+  var $isEmpty = dartx.isEmpty;
+  var $length = dartx.length;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    ObjectNToFutureOfvoid: () => (T.ObjectNToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [T.ObjectN()])))(),
+    WebViewStateChangedTovoid: () => (T.WebViewStateChangedTovoid = dart.constFn(dart.fnType(dart.void, [base.WebViewStateChanged])))(),
+    RouteTobool: () => (T.RouteTobool = dart.constFn(dart.fnType(core.bool, [navigator.Route])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    RectTovoid: () => (T.RectTovoid = dart.constFn(dart.fnType(dart.void, [ui.Rect])))(),
+    StreamControllerOfNull: () => (T.StreamControllerOfNull = dart.constFn(async.StreamController$(core.Null)))(),
+    StreamControllerOfString: () => (T.StreamControllerOfString = dart.constFn(async.StreamController$(core.String)))(),
+    StreamControllerOfWebViewStateChanged: () => (T.StreamControllerOfWebViewStateChanged = dart.constFn(async.StreamController$(base.WebViewStateChanged)))(),
+    StreamControllerOfdouble: () => (T.StreamControllerOfdouble = dart.constFn(async.StreamController$(core.double)))(),
+    StreamControllerOfWebViewHttpError: () => (T.StreamControllerOfWebViewHttpError = dart.constFn(async.StreamController$(base.WebViewHttpError)))(),
+    StreamControllerOfJavascriptMessage: () => (T.StreamControllerOfJavascriptMessage = dart.constFn(async.StreamController$(javascript_message.JavascriptMessage)))(),
+    IdentityMapOfString$JavascriptChannel: () => (T.IdentityMapOfString$JavascriptChannel = dart.constFn(_js_helper.IdentityMap$(core.String, javascript_channel.JavascriptChannel)))(),
+    LinkedHashMapOfString$dynamic: () => (T.LinkedHashMapOfString$dynamic = dart.constFn(collection.LinkedHashMap$(core.String, dart.dynamic)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    JavascriptChannelTovoid: () => (T.JavascriptChannelTovoid = dart.constFn(dart.fnType(dart.void, [javascript_channel.JavascriptChannel])))(),
+    IdentityMapOfString$double: () => (T.IdentityMapOfString$double = dart.constFn(_js_helper.IdentityMap$(core.String, core.double)))(),
+    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    FutureOrOfbool: () => (T.FutureOrOfbool = dart.constFn(async.FutureOr$(core.bool)))(),
+    StringTovoid: () => (T.StringTovoid = dart.constFn(dart.fnType(dart.void, [core.String])))(),
+    MapOfString$String: () => (T.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
+    JavascriptChannelToString: () => (T.JavascriptChannelToString = dart.constFn(dart.fnType(core.String, [javascript_channel.JavascriptChannel])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.constSet(javascript_channel.JavascriptChannel, []);
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 250000
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 26,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/webview_scaffold.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([], widget_inspector._Location);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/webview_scaffold.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: progress_indicator._ActivityIndicatorType.prototype,
+        [_name]: "_ActivityIndicatorType.material",
+        index: 0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: progress_indicator.CircularProgressIndicator.prototype,
+        [Widget__location]: C[7] || CT.C7,
+        [Widget_key]: null,
+        [ProgressIndicator_semanticsValue]: null,
+        [ProgressIndicator_semanticsLabel]: null,
+        [ProgressIndicator_valueColor]: null,
+        [ProgressIndicator_color]: null,
+        [ProgressIndicator_backgroundColor]: null,
+        [ProgressIndicator_value]: null,
+        [CircularProgressIndicator_strokeWidth]: 4,
+        [CircularProgressIndicator__indicatorType]: C[9] || CT.C9
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: basic.Center.prototype,
+        [Widget__location]: C[3] || CT.C3,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: C[6] || CT.C6,
+        [Align_heightFactor]: null,
+        [Align_widthFactor]: null,
+        [Align_alignment]: C[10] || CT.C10
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onRectChanged",
+        [_Location_column]: 9,
+        [_Location_line]: 153,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13, C[14] || CT.C14], widget_inspector._Location);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 152,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/webview_scaffold.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "resizeToAvoidBottomInset",
+        [_Location_column]: 7,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "persistentFooterButtons",
+        [_Location_column]: 7,
+        [_Location_line]: 150,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 151,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21], widget_inspector._Location);
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 147,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/webview_scaffold.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: base.WebViewState.prototype,
+        [_name$]: "WebViewState.shouldStart",
+        index: 0
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: base.WebViewState.prototype,
+        [_name$]: "WebViewState.startLoad",
+        index: 1
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: base.WebViewState.prototype,
+        [_name$]: "WebViewState.finishLoad",
+        index: 2
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: base.WebViewState.prototype,
+        [_name$]: "WebViewState.abortLoad",
+        index: 3
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], base.WebViewState);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[29] || CT.C29
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[28] || CT.C28,
+        [MethodChannel_name]: "flutter_webview_plugin"
+      });
+    }
+  }, false);
+  var C = Array(30).fill(void 0);
+  var I = [
+    "package:flutter_webview_plugin/src/webview_scaffold.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/javascript_channel.dart",
+    "package:flutter_webview_plugin/src/javascript_channel.dart",
+    "package:flutter_webview_plugin/src/base.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib/src/base.dart"
+  ];
+  var appBar$ = dart.privateName(webview_scaffold, "WebviewScaffold.appBar");
+  var url$ = dart.privateName(webview_scaffold, "WebviewScaffold.url");
+  var headers$ = dart.privateName(webview_scaffold, "WebviewScaffold.headers");
+  var javascriptChannels$ = dart.privateName(webview_scaffold, "WebviewScaffold.javascriptChannels");
+  var withJavascript$ = dart.privateName(webview_scaffold, "WebviewScaffold.withJavascript");
+  var clearCache$ = dart.privateName(webview_scaffold, "WebviewScaffold.clearCache");
+  var clearCookies$ = dart.privateName(webview_scaffold, "WebviewScaffold.clearCookies");
+  var mediaPlaybackRequiresUserGesture$ = dart.privateName(webview_scaffold, "WebviewScaffold.mediaPlaybackRequiresUserGesture");
+  var enableAppScheme$ = dart.privateName(webview_scaffold, "WebviewScaffold.enableAppScheme");
+  var userAgent$ = dart.privateName(webview_scaffold, "WebviewScaffold.userAgent");
+  var primary$ = dart.privateName(webview_scaffold, "WebviewScaffold.primary");
+  var persistentFooterButtons$ = dart.privateName(webview_scaffold, "WebviewScaffold.persistentFooterButtons");
+  var bottomNavigationBar$ = dart.privateName(webview_scaffold, "WebviewScaffold.bottomNavigationBar");
+  var withZoom$ = dart.privateName(webview_scaffold, "WebviewScaffold.withZoom");
+  var displayZoomControls$ = dart.privateName(webview_scaffold, "WebviewScaffold.displayZoomControls");
+  var withLocalStorage$ = dart.privateName(webview_scaffold, "WebviewScaffold.withLocalStorage");
+  var withLocalUrl$ = dart.privateName(webview_scaffold, "WebviewScaffold.withLocalUrl");
+  var localUrlScope$ = dart.privateName(webview_scaffold, "WebviewScaffold.localUrlScope");
+  var scrollBar$ = dart.privateName(webview_scaffold, "WebviewScaffold.scrollBar");
+  var supportMultipleWindows$ = dart.privateName(webview_scaffold, "WebviewScaffold.supportMultipleWindows");
+  var appCacheEnabled$ = dart.privateName(webview_scaffold, "WebviewScaffold.appCacheEnabled");
+  var hidden$ = dart.privateName(webview_scaffold, "WebviewScaffold.hidden");
+  var initialChild$ = dart.privateName(webview_scaffold, "WebviewScaffold.initialChild");
+  var allowFileURLs$ = dart.privateName(webview_scaffold, "WebviewScaffold.allowFileURLs");
+  var resizeToAvoidBottomInset$ = dart.privateName(webview_scaffold, "WebviewScaffold.resizeToAvoidBottomInset");
+  var invalidUrlRegex$ = dart.privateName(webview_scaffold, "WebviewScaffold.invalidUrlRegex");
+  var geolocationEnabled$ = dart.privateName(webview_scaffold, "WebviewScaffold.geolocationEnabled");
+  var withOverviewMode$ = dart.privateName(webview_scaffold, "WebviewScaffold.withOverviewMode");
+  var useWideViewPort$ = dart.privateName(webview_scaffold, "WebviewScaffold.useWideViewPort");
+  var debuggingEnabled$ = dart.privateName(webview_scaffold, "WebviewScaffold.debuggingEnabled");
+  var ignoreSSLErrors$ = dart.privateName(webview_scaffold, "WebviewScaffold.ignoreSSLErrors");
+  webview_scaffold.WebviewScaffold = class WebviewScaffold extends framework.StatefulWidget {
+    get appBar() {
+      return this[appBar$];
+    }
+    set appBar(value) {
+      super.appBar = value;
+    }
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get headers() {
+      return this[headers$];
+    }
+    set headers(value) {
+      super.headers = value;
+    }
+    get javascriptChannels() {
+      return this[javascriptChannels$];
+    }
+    set javascriptChannels(value) {
+      super.javascriptChannels = value;
+    }
+    get withJavascript() {
+      return this[withJavascript$];
+    }
+    set withJavascript(value) {
+      super.withJavascript = value;
+    }
+    get clearCache() {
+      return this[clearCache$];
+    }
+    set clearCache(value) {
+      super.clearCache = value;
+    }
+    get clearCookies() {
+      return this[clearCookies$];
+    }
+    set clearCookies(value) {
+      super.clearCookies = value;
+    }
+    get mediaPlaybackRequiresUserGesture() {
+      return this[mediaPlaybackRequiresUserGesture$];
+    }
+    set mediaPlaybackRequiresUserGesture(value) {
+      super.mediaPlaybackRequiresUserGesture = value;
+    }
+    get enableAppScheme() {
+      return this[enableAppScheme$];
+    }
+    set enableAppScheme(value) {
+      super.enableAppScheme = value;
+    }
+    get userAgent() {
+      return this[userAgent$];
+    }
+    set userAgent(value) {
+      super.userAgent = value;
+    }
+    get primary() {
+      return this[primary$];
+    }
+    set primary(value) {
+      super.primary = value;
+    }
+    get persistentFooterButtons() {
+      return this[persistentFooterButtons$];
+    }
+    set persistentFooterButtons(value) {
+      super.persistentFooterButtons = value;
+    }
+    get bottomNavigationBar() {
+      return this[bottomNavigationBar$];
+    }
+    set bottomNavigationBar(value) {
+      super.bottomNavigationBar = value;
+    }
+    get withZoom() {
+      return this[withZoom$];
+    }
+    set withZoom(value) {
+      super.withZoom = value;
+    }
+    get displayZoomControls() {
+      return this[displayZoomControls$];
+    }
+    set displayZoomControls(value) {
+      super.displayZoomControls = value;
+    }
+    get withLocalStorage() {
+      return this[withLocalStorage$];
+    }
+    set withLocalStorage(value) {
+      super.withLocalStorage = value;
+    }
+    get withLocalUrl() {
+      return this[withLocalUrl$];
+    }
+    set withLocalUrl(value) {
+      super.withLocalUrl = value;
+    }
+    get localUrlScope() {
+      return this[localUrlScope$];
+    }
+    set localUrlScope(value) {
+      super.localUrlScope = value;
+    }
+    get scrollBar() {
+      return this[scrollBar$];
+    }
+    set scrollBar(value) {
+      super.scrollBar = value;
+    }
+    get supportMultipleWindows() {
+      return this[supportMultipleWindows$];
+    }
+    set supportMultipleWindows(value) {
+      super.supportMultipleWindows = value;
+    }
+    get appCacheEnabled() {
+      return this[appCacheEnabled$];
+    }
+    set appCacheEnabled(value) {
+      super.appCacheEnabled = value;
+    }
+    get hidden() {
+      return this[hidden$];
+    }
+    set hidden(value) {
+      super.hidden = value;
+    }
+    get initialChild() {
+      return this[initialChild$];
+    }
+    set initialChild(value) {
+      super.initialChild = value;
+    }
+    get allowFileURLs() {
+      return this[allowFileURLs$];
+    }
+    set allowFileURLs(value) {
+      super.allowFileURLs = value;
+    }
+    get resizeToAvoidBottomInset() {
+      return this[resizeToAvoidBottomInset$];
+    }
+    set resizeToAvoidBottomInset(value) {
+      super.resizeToAvoidBottomInset = value;
+    }
+    get invalidUrlRegex() {
+      return this[invalidUrlRegex$];
+    }
+    set invalidUrlRegex(value) {
+      super.invalidUrlRegex = value;
+    }
+    get geolocationEnabled() {
+      return this[geolocationEnabled$];
+    }
+    set geolocationEnabled(value) {
+      super.geolocationEnabled = value;
+    }
+    get withOverviewMode() {
+      return this[withOverviewMode$];
+    }
+    set withOverviewMode(value) {
+      super.withOverviewMode = value;
+    }
+    get useWideViewPort() {
+      return this[useWideViewPort$];
+    }
+    set useWideViewPort(value) {
+      super.useWideViewPort = value;
+    }
+    get debuggingEnabled() {
+      return this[debuggingEnabled$];
+    }
+    set debuggingEnabled(value) {
+      super.debuggingEnabled = value;
+    }
+    get ignoreSSLErrors() {
+      return this[ignoreSSLErrors$];
+    }
+    set ignoreSSLErrors(value) {
+      super.ignoreSSLErrors = value;
+    }
+    createState() {
+      return new webview_scaffold._WebviewScaffoldState.new();
+    }
+  };
+  (webview_scaffold.WebviewScaffold.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let appBar = opts && 'appBar' in opts ? opts.appBar : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let headers = opts && 'headers' in opts ? opts.headers : null;
+    let javascriptChannels = opts && 'javascriptChannels' in opts ? opts.javascriptChannels : C[0] || CT.C0;
+    let withJavascript = opts && 'withJavascript' in opts ? opts.withJavascript : true;
+    let clearCache = opts && 'clearCache' in opts ? opts.clearCache : false;
+    let clearCookies = opts && 'clearCookies' in opts ? opts.clearCookies : false;
+    let mediaPlaybackRequiresUserGesture = opts && 'mediaPlaybackRequiresUserGesture' in opts ? opts.mediaPlaybackRequiresUserGesture : true;
+    let enableAppScheme = opts && 'enableAppScheme' in opts ? opts.enableAppScheme : true;
+    let userAgent = opts && 'userAgent' in opts ? opts.userAgent : null;
+    let primary = opts && 'primary' in opts ? opts.primary : true;
+    let persistentFooterButtons = opts && 'persistentFooterButtons' in opts ? opts.persistentFooterButtons : null;
+    let bottomNavigationBar = opts && 'bottomNavigationBar' in opts ? opts.bottomNavigationBar : null;
+    let withZoom = opts && 'withZoom' in opts ? opts.withZoom : false;
+    let displayZoomControls = opts && 'displayZoomControls' in opts ? opts.displayZoomControls : false;
+    let withLocalStorage = opts && 'withLocalStorage' in opts ? opts.withLocalStorage : true;
+    let withLocalUrl = opts && 'withLocalUrl' in opts ? opts.withLocalUrl : false;
+    let localUrlScope = opts && 'localUrlScope' in opts ? opts.localUrlScope : null;
+    let withOverviewMode = opts && 'withOverviewMode' in opts ? opts.withOverviewMode : false;
+    let useWideViewPort = opts && 'useWideViewPort' in opts ? opts.useWideViewPort : false;
+    let scrollBar = opts && 'scrollBar' in opts ? opts.scrollBar : true;
+    let supportMultipleWindows = opts && 'supportMultipleWindows' in opts ? opts.supportMultipleWindows : false;
+    let appCacheEnabled = opts && 'appCacheEnabled' in opts ? opts.appCacheEnabled : false;
+    let hidden = opts && 'hidden' in opts ? opts.hidden : false;
+    let initialChild = opts && 'initialChild' in opts ? opts.initialChild : null;
+    let allowFileURLs = opts && 'allowFileURLs' in opts ? opts.allowFileURLs : false;
+    let resizeToAvoidBottomInset = opts && 'resizeToAvoidBottomInset' in opts ? opts.resizeToAvoidBottomInset : false;
+    let invalidUrlRegex = opts && 'invalidUrlRegex' in opts ? opts.invalidUrlRegex : null;
+    let geolocationEnabled = opts && 'geolocationEnabled' in opts ? opts.geolocationEnabled : false;
+    let debuggingEnabled = opts && 'debuggingEnabled' in opts ? opts.debuggingEnabled : false;
+    let ignoreSSLErrors = opts && 'ignoreSSLErrors' in opts ? opts.ignoreSSLErrors : false;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[appBar$] = appBar;
+    this[url$] = url;
+    this[headers$] = headers;
+    this[javascriptChannels$] = javascriptChannels;
+    this[withJavascript$] = withJavascript;
+    this[clearCache$] = clearCache;
+    this[clearCookies$] = clearCookies;
+    this[mediaPlaybackRequiresUserGesture$] = mediaPlaybackRequiresUserGesture;
+    this[enableAppScheme$] = enableAppScheme;
+    this[userAgent$] = userAgent;
+    this[primary$] = primary;
+    this[persistentFooterButtons$] = persistentFooterButtons;
+    this[bottomNavigationBar$] = bottomNavigationBar;
+    this[withZoom$] = withZoom;
+    this[displayZoomControls$] = displayZoomControls;
+    this[withLocalStorage$] = withLocalStorage;
+    this[withLocalUrl$] = withLocalUrl;
+    this[localUrlScope$] = localUrlScope;
+    this[withOverviewMode$] = withOverviewMode;
+    this[useWideViewPort$] = useWideViewPort;
+    this[scrollBar$] = scrollBar;
+    this[supportMultipleWindows$] = supportMultipleWindows;
+    this[appCacheEnabled$] = appCacheEnabled;
+    this[hidden$] = hidden;
+    this[initialChild$] = initialChild;
+    this[allowFileURLs$] = allowFileURLs;
+    this[resizeToAvoidBottomInset$] = resizeToAvoidBottomInset;
+    this[invalidUrlRegex$] = invalidUrlRegex;
+    this[geolocationEnabled$] = geolocationEnabled;
+    this[debuggingEnabled$] = debuggingEnabled;
+    this[ignoreSSLErrors$] = ignoreSSLErrors;
+    webview_scaffold.WebviewScaffold.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = webview_scaffold.WebviewScaffold.prototype;
+  dart.addTypeTests(webview_scaffold.WebviewScaffold);
+  dart.addTypeCaches(webview_scaffold.WebviewScaffold);
+  dart.setMethodSignature(webview_scaffold.WebviewScaffold, () => ({
+    __proto__: dart.getMethods(webview_scaffold.WebviewScaffold.__proto__),
+    createState: dart.fnType(webview_scaffold._WebviewScaffoldState, [])
+  }));
+  dart.setLibraryUri(webview_scaffold.WebviewScaffold, I[0]);
+  dart.setFieldSignature(webview_scaffold.WebviewScaffold, () => ({
+    __proto__: dart.getFields(webview_scaffold.WebviewScaffold.__proto__),
+    appBar: dart.finalFieldType(dart.nullable(preferred_size.PreferredSizeWidget)),
+    url: dart.finalFieldType(core.String),
+    headers: dart.finalFieldType(dart.nullable(core.Map$(core.String, core.String))),
+    javascriptChannels: dart.finalFieldType(core.Set$(javascript_channel.JavascriptChannel)),
+    withJavascript: dart.finalFieldType(core.bool),
+    clearCache: dart.finalFieldType(core.bool),
+    clearCookies: dart.finalFieldType(core.bool),
+    mediaPlaybackRequiresUserGesture: dart.finalFieldType(core.bool),
+    enableAppScheme: dart.finalFieldType(core.bool),
+    userAgent: dart.finalFieldType(dart.nullable(core.String)),
+    primary: dart.finalFieldType(core.bool),
+    persistentFooterButtons: dart.finalFieldType(dart.nullable(core.List$(framework.Widget))),
+    bottomNavigationBar: dart.finalFieldType(dart.nullable(framework.Widget)),
+    withZoom: dart.finalFieldType(core.bool),
+    displayZoomControls: dart.finalFieldType(core.bool),
+    withLocalStorage: dart.finalFieldType(core.bool),
+    withLocalUrl: dart.finalFieldType(core.bool),
+    localUrlScope: dart.finalFieldType(dart.nullable(core.String)),
+    scrollBar: dart.finalFieldType(core.bool),
+    supportMultipleWindows: dart.finalFieldType(core.bool),
+    appCacheEnabled: dart.finalFieldType(core.bool),
+    hidden: dart.finalFieldType(core.bool),
+    initialChild: dart.finalFieldType(dart.nullable(framework.Widget)),
+    allowFileURLs: dart.finalFieldType(core.bool),
+    resizeToAvoidBottomInset: dart.finalFieldType(core.bool),
+    invalidUrlRegex: dart.finalFieldType(dart.nullable(core.String)),
+    geolocationEnabled: dart.finalFieldType(core.bool),
+    withOverviewMode: dart.finalFieldType(core.bool),
+    useWideViewPort: dart.finalFieldType(core.bool),
+    debuggingEnabled: dart.finalFieldType(core.bool),
+    ignoreSSLErrors: dart.finalFieldType(core.bool)
+  }));
+  var _rect = dart.privateName(webview_scaffold, "_rect");
+  var _resizeTimer = dart.privateName(webview_scaffold, "_resizeTimer");
+  var _onStateChanged = dart.privateName(webview_scaffold, "_onStateChanged");
+  var _onBack = dart.privateName(webview_scaffold, "_onBack");
+  var _topMostRoute = dart.privateName(webview_scaffold, "_topMostRoute");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var ProgressIndicator_semanticsValue = dart.privateName(progress_indicator, "ProgressIndicator.semanticsValue");
+  var ProgressIndicator_semanticsLabel = dart.privateName(progress_indicator, "ProgressIndicator.semanticsLabel");
+  var ProgressIndicator_valueColor = dart.privateName(progress_indicator, "ProgressIndicator.valueColor");
+  var ProgressIndicator_color = dart.privateName(progress_indicator, "ProgressIndicator.color");
+  var ProgressIndicator_backgroundColor = dart.privateName(progress_indicator, "ProgressIndicator.backgroundColor");
+  var ProgressIndicator_value = dart.privateName(progress_indicator, "ProgressIndicator.value");
+  var CircularProgressIndicator_strokeWidth = dart.privateName(progress_indicator, "CircularProgressIndicator.strokeWidth");
+  var _name = dart.privateName(progress_indicator, "_name");
+  var CircularProgressIndicator__indicatorType = dart.privateName(progress_indicator, "CircularProgressIndicator._indicatorType");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var Align_heightFactor = dart.privateName(basic, "Align.heightFactor");
+  var Align_widthFactor = dart.privateName(basic, "Align.widthFactor");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var Align_alignment = dart.privateName(basic, "Align.alignment");
+  webview_scaffold._WebviewScaffoldState = class _WebviewScaffoldState extends framework.State$(webview_scaffold.WebviewScaffold) {
+    initState() {
+      super.initState();
+      this.webviewReference.close();
+      this[_onBack] = this.webviewReference.onBack.listen(dart.fn(_ => async.async(dart.void, (function*() {
+        if (!this.mounted) {
+          return;
+        }
+        let pop = (yield this[_topMostRoute].willPop());
+        if (pop === navigator.RoutePopDisposition.pop) {
+          let isOnTopMostRoute = this[_topMostRoute][$_equals](routes.ModalRoute.of(T.ObjectN(), this.context));
+          if (isOnTopMostRoute) {
+            this.webviewReference.close();
+          }
+          navigator.Navigator.pop(T.ObjectN(), this.context);
+        }
+      }).bind(this)), T.ObjectNToFutureOfvoid()));
+      if (this.widget.hidden) {
+        this[_onStateChanged] = this.webviewReference.onStateChanged.listen(dart.fn(state => {
+          if (state.type === base.WebViewState.finishLoad) {
+            this.webviewReference.show();
+          }
+        }, T.WebViewStateChangedTovoid()));
+      }
+    }
+    get [_topMostRoute]() {
+      let topMost = null;
+      navigator.Navigator.popUntil(this.context, dart.fn(route => {
+        topMost = route;
+        return true;
+      }, T.RouteTobool()));
+      return dart.nullCheck(topMost);
+    }
+    dispose() {
+      let t0, t0$, t0$0;
+      super.dispose();
+      t0 = this[_onBack];
+      t0 == null ? null : t0.cancel();
+      t0$ = this[_resizeTimer];
+      t0$ == null ? null : t0$.cancel();
+      this.webviewReference.close();
+      if (this.widget.hidden) {
+        t0$0 = this[_onStateChanged];
+        t0$0 == null ? null : t0$0.cancel();
+      }
+      this.webviewReference.dispose();
+    }
+    build(context) {
+      let t0;
+      return new scaffold.Scaffold.new({appBar: this.widget.appBar, resizeToAvoidBottomInset: this.widget.resizeToAvoidBottomInset, persistentFooterButtons: this.widget.persistentFooterButtons, bottomNavigationBar: this.widget.bottomNavigationBar, body: new webview_scaffold._WebviewPlaceholder.new({onRectChanged: dart.fn(value => {
+            let t0;
+            if (this[_rect] == null) {
+              this[_rect] = value;
+              this.webviewReference.launch(this.widget.url, {headers: this.widget.headers, javascriptChannels: this.widget.javascriptChannels, withJavascript: this.widget.withJavascript, clearCache: this.widget.clearCache, clearCookies: this.widget.clearCookies, mediaPlaybackRequiresUserGesture: this.widget.mediaPlaybackRequiresUserGesture, hidden: this.widget.hidden, enableAppScheme: this.widget.enableAppScheme, userAgent: this.widget.userAgent, rect: this[_rect], withZoom: this.widget.withZoom, displayZoomControls: this.widget.displayZoomControls, withLocalStorage: this.widget.withLocalStorage, withLocalUrl: this.widget.withLocalUrl, localUrlScope: this.widget.localUrlScope, withOverviewMode: this.widget.withOverviewMode, useWideViewPort: this.widget.useWideViewPort, scrollBar: this.widget.scrollBar, supportMultipleWindows: this.widget.supportMultipleWindows, appCacheEnabled: this.widget.appCacheEnabled, allowFileURLs: this.widget.allowFileURLs, invalidUrlRegex: this.widget.invalidUrlRegex, geolocationEnabled: this.widget.geolocationEnabled, debuggingEnabled: this.widget.debuggingEnabled, ignoreSSLErrors: this.widget.ignoreSSLErrors});
+            } else {
+              if (!dart.equals(this[_rect], value)) {
+                this[_rect] = value;
+                t0 = this[_resizeTimer];
+                t0 == null ? null : t0.cancel();
+                this[_resizeTimer] = async.Timer.new(C[1] || CT.C1, dart.fn(() => {
+                  this.webviewReference.resize(dart.nullCheck(this[_rect]));
+                }, T.VoidTovoid()));
+              }
+            }
+          }, T.RectTovoid()), child: (t0 = this.widget.initialChild, t0 == null ? C[2] || CT.C2 : t0), $creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), $creationLocationd_0dea112b090073317d4: C[15] || CT.C15});
+    }
+  };
+  (webview_scaffold._WebviewScaffoldState.new = function() {
+    this.webviewReference = base.FlutterWebviewPlugin.new();
+    this[_rect] = null;
+    this[_resizeTimer] = null;
+    this[_onStateChanged] = null;
+    this[_onBack] = null;
+    webview_scaffold._WebviewScaffoldState.__proto__.new.call(this);
+    ;
+  }).prototype = webview_scaffold._WebviewScaffoldState.prototype;
+  dart.addTypeTests(webview_scaffold._WebviewScaffoldState);
+  dart.addTypeCaches(webview_scaffold._WebviewScaffoldState);
+  dart.setMethodSignature(webview_scaffold._WebviewScaffoldState, () => ({
+    __proto__: dart.getMethods(webview_scaffold._WebviewScaffoldState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(webview_scaffold._WebviewScaffoldState, () => ({
+    __proto__: dart.getGetters(webview_scaffold._WebviewScaffoldState.__proto__),
+    [_topMostRoute]: navigator.Route
+  }));
+  dart.setLibraryUri(webview_scaffold._WebviewScaffoldState, I[0]);
+  dart.setFieldSignature(webview_scaffold._WebviewScaffoldState, () => ({
+    __proto__: dart.getFields(webview_scaffold._WebviewScaffoldState.__proto__),
+    webviewReference: dart.finalFieldType(base.FlutterWebviewPlugin),
+    [_rect]: dart.fieldType(dart.nullable(ui.Rect)),
+    [_resizeTimer]: dart.fieldType(dart.nullable(async.Timer)),
+    [_onStateChanged]: dart.fieldType(dart.nullable(async.StreamSubscription$(base.WebViewStateChanged))),
+    [_onBack]: dart.fieldType(dart.nullable(async.StreamSubscription))
+  }));
+  var onRectChanged$ = dart.privateName(webview_scaffold, "_WebviewPlaceholder.onRectChanged");
+  webview_scaffold._WebviewPlaceholder = class _WebviewPlaceholder extends framework.SingleChildRenderObjectWidget {
+    get onRectChanged() {
+      return this[onRectChanged$];
+    }
+    set onRectChanged(value) {
+      super.onRectChanged = value;
+    }
+    createRenderObject(context) {
+      return new webview_scaffold._WebviewPlaceholderRender.new({onRectChanged: this.onRectChanged});
+    }
+    updateRenderObject(context, renderObject) {
+      let t0;
+      webview_scaffold._WebviewPlaceholderRender.as(renderObject);
+      t0 = renderObject;
+      (() => {
+        t0.onRectChanged = this.onRectChanged;
+        return t0;
+      })();
+    }
+  };
+  (webview_scaffold._WebviewPlaceholder.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let onRectChanged = opts && 'onRectChanged' in opts ? opts.onRectChanged : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[onRectChanged$] = onRectChanged;
+    webview_scaffold._WebviewPlaceholder.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = webview_scaffold._WebviewPlaceholder.prototype;
+  dart.addTypeTests(webview_scaffold._WebviewPlaceholder);
+  dart.addTypeCaches(webview_scaffold._WebviewPlaceholder);
+  dart.setMethodSignature(webview_scaffold._WebviewPlaceholder, () => ({
+    __proto__: dart.getMethods(webview_scaffold._WebviewPlaceholder.__proto__),
+    createRenderObject: dart.fnType(object.RenderObject, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(webview_scaffold._WebviewPlaceholder, I[0]);
+  dart.setFieldSignature(webview_scaffold._WebviewPlaceholder, () => ({
+    __proto__: dart.getFields(webview_scaffold._WebviewPlaceholder.__proto__),
+    onRectChanged: dart.finalFieldType(dart.fnType(dart.void, [ui.Rect]))
+  }));
+  var _callback = dart.privateName(webview_scaffold, "_callback");
+  webview_scaffold._WebviewPlaceholderRender = class _WebviewPlaceholderRender extends proxy_box.RenderProxyBox {
+    get rect() {
+      return dart.nullCheck(this[_rect]);
+    }
+    set onRectChanged(callback) {
+      if (!callback[$_equals](this[_callback])) {
+        this[_callback] = callback;
+        this.notifyRect();
+      }
+    }
+    notifyRect() {
+      if (this[_callback] != null && this[_rect] != null) {
+        dart.nullCheck(this[_callback])(dart.nullCheck(this[_rect]));
+      }
+    }
+    paint(context, offset) {
+      super.paint(context, offset);
+      let rect = offset['&'](this.size);
+      if (!dart.equals(this[_rect], rect)) {
+        this[_rect] = rect;
+        this.notifyRect();
+      }
+    }
+  };
+  (webview_scaffold._WebviewPlaceholderRender.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let onRectChanged = opts && 'onRectChanged' in opts ? opts.onRectChanged : null;
+    this[_rect] = null;
+    this[_callback] = onRectChanged;
+    webview_scaffold._WebviewPlaceholderRender.__proto__.new.call(this, child);
+    ;
+  }).prototype = webview_scaffold._WebviewPlaceholderRender.prototype;
+  dart.addTypeTests(webview_scaffold._WebviewPlaceholderRender);
+  dart.addTypeCaches(webview_scaffold._WebviewPlaceholderRender);
+  dart.setMethodSignature(webview_scaffold._WebviewPlaceholderRender, () => ({
+    __proto__: dart.getMethods(webview_scaffold._WebviewPlaceholderRender.__proto__),
+    notifyRect: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(webview_scaffold._WebviewPlaceholderRender, () => ({
+    __proto__: dart.getGetters(webview_scaffold._WebviewPlaceholderRender.__proto__),
+    rect: ui.Rect
+  }));
+  dart.setSetterSignature(webview_scaffold._WebviewPlaceholderRender, () => ({
+    __proto__: dart.getSetters(webview_scaffold._WebviewPlaceholderRender.__proto__),
+    onRectChanged: dart.fnType(dart.void, [ui.Rect])
+  }));
+  dart.setLibraryUri(webview_scaffold._WebviewPlaceholderRender, I[0]);
+  dart.setFieldSignature(webview_scaffold._WebviewPlaceholderRender, () => ({
+    __proto__: dart.getFields(webview_scaffold._WebviewPlaceholderRender.__proto__),
+    [_callback]: dart.fieldType(dart.nullable(dart.fnType(dart.void, [ui.Rect]))),
+    [_rect]: dart.fieldType(dart.nullable(ui.Rect))
+  }));
+  var name$ = dart.privateName(javascript_channel, "JavascriptChannel.name");
+  var onMessageReceived$ = dart.privateName(javascript_channel, "JavascriptChannel.onMessageReceived");
+  javascript_channel.JavascriptChannel = class JavascriptChannel extends core.Object {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get onMessageReceived() {
+      return this[onMessageReceived$];
+    }
+    set onMessageReceived(value) {
+      super.onMessageReceived = value;
+    }
+  };
+  (javascript_channel.JavascriptChannel.new = function(opts) {
+    let name = opts && 'name' in opts ? opts.name : null;
+    let onMessageReceived = opts && 'onMessageReceived' in opts ? opts.onMessageReceived : null;
+    this[name$] = name;
+    this[onMessageReceived$] = onMessageReceived;
+    if (!javascript_channel._validChannelNames.hasMatch(name)) dart.assertFailed(null, I[1], 13, 15, "_validChannelNames.hasMatch(name)");
+    ;
+  }).prototype = javascript_channel.JavascriptChannel.prototype;
+  dart.addTypeTests(javascript_channel.JavascriptChannel);
+  dart.addTypeCaches(javascript_channel.JavascriptChannel);
+  dart.setLibraryUri(javascript_channel.JavascriptChannel, I[2]);
+  dart.setFieldSignature(javascript_channel.JavascriptChannel, () => ({
+    __proto__: dart.getFields(javascript_channel.JavascriptChannel.__proto__),
+    name: dart.finalFieldType(core.String),
+    onMessageReceived: dart.finalFieldType(dart.fnType(dart.void, [javascript_message.JavascriptMessage]))
+  }));
+  dart.defineLazy(javascript_channel, {
+    /*javascript_channel._validChannelNames*/get _validChannelNames() {
+      return core.RegExp.new("^[a-zA-Z_][a-zA-Z0-9]*$");
+    }
+  }, false);
+  var _name$ = dart.privateName(base, "_name");
+  base.WebViewState = class WebViewState extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (base.WebViewState.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = base.WebViewState.prototype;
+  dart.addTypeTests(base.WebViewState);
+  dart.addTypeCaches(base.WebViewState);
+  dart.setLibraryUri(base.WebViewState, I[3]);
+  dart.setFieldSignature(base.WebViewState, () => ({
+    __proto__: dart.getFields(base.WebViewState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(base.WebViewState, ['toString']);
+  base.WebViewState.shouldStart = C[22] || CT.C22;
+  base.WebViewState.startLoad = C[23] || CT.C23;
+  base.WebViewState.finishLoad = C[24] || CT.C24;
+  base.WebViewState.abortLoad = C[25] || CT.C25;
+  base.WebViewState.values = C[26] || CT.C26;
+  var _onBack$ = dart.privateName(base, "_onBack");
+  var _onDestroy = dart.privateName(base, "_onDestroy");
+  var _onUrlChanged = dart.privateName(base, "_onUrlChanged");
+  var _onStateChanged$ = dart.privateName(base, "_onStateChanged");
+  var _onScrollXChanged = dart.privateName(base, "_onScrollXChanged");
+  var _onScrollYChanged = dart.privateName(base, "_onScrollYChanged");
+  var _onProgressChanged = dart.privateName(base, "_onProgressChanged");
+  var _onHttpError = dart.privateName(base, "_onHttpError");
+  var _onPostMessage = dart.privateName(base, "_onPostMessage");
+  var _javascriptChannels = dart.privateName(base, "_javascriptChannels");
+  var _channel$ = dart.privateName(base, "_channel");
+  var _handleMessages = dart.privateName(base, "_handleMessages");
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  var _handleJavascriptChannelMessage = dart.privateName(base, "_handleJavascriptChannelMessage");
+  var _assertJavascriptChannelNamesAreUnique = dart.privateName(base, "_assertJavascriptChannelNamesAreUnique");
+  var _extractJavascriptChannelNames = dart.privateName(base, "_extractJavascriptChannelNames");
+  base.FlutterWebviewPlugin = class FlutterWebviewPlugin extends core.Object {
+    static new() {
+      if (base.FlutterWebviewPlugin._instance == null) {
+        let methodChannel = C[27] || CT.C27;
+        base.FlutterWebviewPlugin._instance = new base.FlutterWebviewPlugin.private(methodChannel);
+      }
+      return dart.nullCheck(base.FlutterWebviewPlugin._instance);
+    }
+    [_handleMessages](call) {
+      return async.async(core.Null, (function* _handleMessages() {
+        switch (call.method) {
+          case "onBack":
+          {
+            this[_onBack$].add(null);
+            break;
+          }
+          case "onDestroy":
+          {
+            this[_onDestroy].add(null);
+            break;
+          }
+          case "onUrlChanged":
+          {
+            this[_onUrlChanged].add(core.String.as(dart.dsend(call.arguments, '_get', ["url"])));
+            break;
+          }
+          case "onScrollXChanged":
+          {
+            this[_onScrollXChanged].add(core.double.as(dart.dsend(call.arguments, '_get', ["xDirection"])));
+            break;
+          }
+          case "onScrollYChanged":
+          {
+            this[_onScrollYChanged].add(core.double.as(dart.dsend(call.arguments, '_get', ["yDirection"])));
+            break;
+          }
+          case "onProgressChanged":
+          {
+            this[_onProgressChanged].add(core.double.as(dart.dsend(call.arguments, '_get', ["progress"])));
+            break;
+          }
+          case "onState":
+          {
+            this[_onStateChanged$].add(base.WebViewStateChanged.fromMap(T.LinkedHashMapOfString$dynamic().from(core.Map.as(call.arguments))));
+            break;
+          }
+          case "onHttpError":
+          {
+            this[_onHttpError].add(new base.WebViewHttpError.new(core.String.as(dart.dsend(call.arguments, '_get', ["code"])), core.String.as(dart.dsend(call.arguments, '_get', ["url"]))));
+            break;
+          }
+          case "javascriptChannelMessage":
+          {
+            this[_handleJavascriptChannelMessage](core.String.as(dart.dsend(call.arguments, '_get', ["channel"])), core.String.as(dart.dsend(call.arguments, '_get', ["message"])));
+            break;
+          }
+        }
+      }).bind(this));
+    }
+    get onDestroy() {
+      return this[_onDestroy].stream;
+    }
+    get onBack() {
+      return this[_onBack$].stream;
+    }
+    get onUrlChanged() {
+      return this[_onUrlChanged].stream;
+    }
+    get onStateChanged() {
+      return this[_onStateChanged$].stream;
+    }
+    get onProgressChanged() {
+      return this[_onProgressChanged].stream;
+    }
+    get onScrollYChanged() {
+      return this[_onScrollYChanged].stream;
+    }
+    get onScrollXChanged() {
+      return this[_onScrollXChanged].stream;
+    }
+    get onHttpError() {
+      return this[_onHttpError].stream;
+    }
+    launch(url, opts) {
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let javascriptChannels = opts && 'javascriptChannels' in opts ? opts.javascriptChannels : C[0] || CT.C0;
+      let withJavascript = opts && 'withJavascript' in opts ? opts.withJavascript : true;
+      let clearCache = opts && 'clearCache' in opts ? opts.clearCache : false;
+      let clearCookies = opts && 'clearCookies' in opts ? opts.clearCookies : false;
+      let mediaPlaybackRequiresUserGesture = opts && 'mediaPlaybackRequiresUserGesture' in opts ? opts.mediaPlaybackRequiresUserGesture : true;
+      let hidden = opts && 'hidden' in opts ? opts.hidden : false;
+      let enableAppScheme = opts && 'enableAppScheme' in opts ? opts.enableAppScheme : true;
+      let rect = opts && 'rect' in opts ? opts.rect : null;
+      let userAgent = opts && 'userAgent' in opts ? opts.userAgent : null;
+      let withZoom = opts && 'withZoom' in opts ? opts.withZoom : false;
+      let displayZoomControls = opts && 'displayZoomControls' in opts ? opts.displayZoomControls : false;
+      let withLocalStorage = opts && 'withLocalStorage' in opts ? opts.withLocalStorage : true;
+      let withLocalUrl = opts && 'withLocalUrl' in opts ? opts.withLocalUrl : false;
+      let localUrlScope = opts && 'localUrlScope' in opts ? opts.localUrlScope : null;
+      let withOverviewMode = opts && 'withOverviewMode' in opts ? opts.withOverviewMode : false;
+      let scrollBar = opts && 'scrollBar' in opts ? opts.scrollBar : true;
+      let supportMultipleWindows = opts && 'supportMultipleWindows' in opts ? opts.supportMultipleWindows : false;
+      let appCacheEnabled = opts && 'appCacheEnabled' in opts ? opts.appCacheEnabled : false;
+      let allowFileURLs = opts && 'allowFileURLs' in opts ? opts.allowFileURLs : false;
+      let useWideViewPort = opts && 'useWideViewPort' in opts ? opts.useWideViewPort : false;
+      let invalidUrlRegex = opts && 'invalidUrlRegex' in opts ? opts.invalidUrlRegex : null;
+      let geolocationEnabled = opts && 'geolocationEnabled' in opts ? opts.geolocationEnabled : false;
+      let debuggingEnabled = opts && 'debuggingEnabled' in opts ? opts.debuggingEnabled : false;
+      let ignoreSSLErrors = opts && 'ignoreSSLErrors' in opts ? opts.ignoreSSLErrors : false;
+      return async.async(dart.void, (function* launch() {
+        let args = new (T.IdentityMapOfString$dynamic()).from(["url", url, "withJavascript", withJavascript, "clearCache", clearCache, "hidden", hidden, "clearCookies", clearCookies, "mediaPlaybackRequiresUserGesture", mediaPlaybackRequiresUserGesture, "enableAppScheme", enableAppScheme, "userAgent", userAgent, "withZoom", withZoom, "displayZoomControls", displayZoomControls, "withLocalStorage", withLocalStorage, "withLocalUrl", withLocalUrl, "localUrlScope", localUrlScope, "scrollBar", scrollBar, "supportMultipleWindows", supportMultipleWindows, "appCacheEnabled", appCacheEnabled, "allowFileURLs", allowFileURLs, "useWideViewPort", useWideViewPort, "invalidUrlRegex", invalidUrlRegex, "geolocationEnabled", geolocationEnabled, "withOverviewMode", withOverviewMode, "debuggingEnabled", debuggingEnabled, "ignoreSSLErrors", ignoreSSLErrors]);
+        if (headers != null) {
+          args[$_set]("headers", headers);
+        }
+        this[_assertJavascriptChannelNamesAreUnique](javascriptChannels);
+        javascriptChannels[$forEach](dart.fn(channel => {
+          this[_javascriptChannels][$_set](channel.name, channel);
+        }, T.JavascriptChannelTovoid()));
+        args[$_set]("javascriptChannelNames", this[_extractJavascriptChannelNames](javascriptChannels)[$toList]());
+        if (rect != null) {
+          args[$_set]("rect", new (T.IdentityMapOfString$double()).from(["left", rect.left, "top", rect.top, "width", rect.width, "height", rect.height]));
+        }
+        yield this[_channel$].invokeMethod(dart.dynamic, "launch", args);
+      }).bind(this));
+    }
+    evalJavascript(code) {
+      return async.async(T.StringN(), (function* evalJavascript() {
+        let res = (yield this[_channel$].invokeMethod(core.String, "eval", new (T.IdentityMapOfString$String()).from(["code", code])));
+        return res;
+      }).bind(this));
+    }
+    close() {
+      return async.async(dart.void, (function* close() {
+        this[_javascriptChannels][$clear]();
+        yield this[_channel$].invokeMethod(dart.dynamic, "close");
+      }).bind(this));
+    }
+    reload() {
+      return async.async(dart.void, (function* reload() {
+        return yield this[_channel$].invokeMethod(dart.void, "reload");
+      }).bind(this));
+    }
+    goBack() {
+      return async.async(dart.void, (function* goBack() {
+        return yield this[_channel$].invokeMethod(dart.void, "back");
+      }).bind(this));
+    }
+    canGoBack() {
+      return async.async(core.bool, (function* canGoBack() {
+        return T.FutureOrOfbool().as(yield this[_channel$].invokeMethod(dart.dynamic, "canGoBack"));
+      }).bind(this));
+    }
+    canGoForward() {
+      return async.async(core.bool, (function* canGoForward() {
+        return T.FutureOrOfbool().as(yield this[_channel$].invokeMethod(dart.dynamic, "canGoForward"));
+      }).bind(this));
+    }
+    goForward() {
+      return async.async(dart.void, (function* goForward() {
+        return yield this[_channel$].invokeMethod(dart.void, "forward");
+      }).bind(this));
+    }
+    hide() {
+      return async.async(dart.void, (function* hide() {
+        return yield this[_channel$].invokeMethod(dart.void, "hide");
+      }).bind(this));
+    }
+    show() {
+      return async.async(dart.void, (function* show() {
+        return yield this[_channel$].invokeMethod(dart.void, "show");
+      }).bind(this));
+    }
+    clearCache() {
+      return async.async(dart.void, (function* clearCache() {
+        return yield this[_channel$].invokeMethod(dart.void, "cleanCache");
+      }).bind(this));
+    }
+    reloadUrl(url, opts) {
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      return async.async(dart.void, (function* reloadUrl() {
+        let args = new (T.IdentityMapOfString$dynamic()).from(["url", url]);
+        if (headers != null) {
+          args[$_set]("headers", headers);
+        }
+        yield this[_channel$].invokeMethod(dart.dynamic, "reloadUrl", args);
+      }).bind(this));
+    }
+    cleanCookies() {
+      return async.async(dart.void, (function* cleanCookies() {
+        yield this.evalJavascript("document.cookie.split(\";\").forEach(function(c) { document.cookie = c.replace(/^ +/, \"\").replace(/=.*/, \"=;expires=\" + new Date().toUTCString() + \";path=/\"); });");
+        return yield this[_channel$].invokeMethod(dart.void, "cleanCookies");
+      }).bind(this));
+    }
+    stopLoading() {
+      return async.async(dart.void, (function* stopLoading() {
+        return yield this[_channel$].invokeMethod(dart.void, "stopLoading");
+      }).bind(this));
+    }
+    dispose() {
+      this[_onDestroy].close();
+      this[_onUrlChanged].close();
+      this[_onStateChanged$].close();
+      this[_onProgressChanged].close();
+      this[_onScrollXChanged].close();
+      this[_onScrollYChanged].close();
+      this[_onHttpError].close();
+      this[_onPostMessage].close();
+      base.FlutterWebviewPlugin._instance = null;
+    }
+    getCookies() {
+      return async.async(T.MapOfString$String(), (function* getCookies() {
+        let t0;
+        let cookiesString = (yield this.evalJavascript("document.cookie"));
+        let cookies = new (T.IdentityMapOfString$String()).new();
+        if ((t0 = cookiesString, t0 == null ? null : t0[$isNotEmpty]) === true) {
+          dart.nullCheck(cookiesString)[$split](";")[$forEach](dart.fn(cookie => {
+            let split = cookie[$split]("=");
+            cookies[$_set](split[$_get](0), split[$_get](1));
+          }, T.StringTovoid()));
+        }
+        return cookies;
+      }).bind(this));
+    }
+    resize(rect) {
+      return async.async(dart.void, (function* resize() {
+        let args = new _js_helper.LinkedMap.new();
+        args[$_set]("rect", new (T.IdentityMapOfString$double()).from(["left", rect.left, "top", rect.top, "width", rect.width, "height", rect.height]));
+        yield this[_channel$].invokeMethod(dart.dynamic, "resize", args);
+      }).bind(this));
+    }
+    [_extractJavascriptChannelNames](channels) {
+      let channelNames = channels[$map](core.String, dart.fn(channel => channel.name, T.JavascriptChannelToString()))[$toSet]();
+      return channelNames;
+    }
+    [_handleJavascriptChannelMessage](channelName, message) {
+      let t1, t0;
+      if (this[_javascriptChannels][$containsKey](channelName)) {
+        t0 = dart.nullCheck(this[_javascriptChannels][$_get](channelName));
+        t1 = new javascript_message.JavascriptMessage.new(message);
+        t0.onMessageReceived(t1);
+      } else
+        core.print("Channel \"" + channelName + "\" is not exstis");
+    }
+    [_assertJavascriptChannelNamesAreUnique](channels) {
+      if (channels == null || channels[$isEmpty]) {
+        return;
+      }
+      if (!(this[_extractJavascriptChannelNames](channels)[$length] === channels[$length])) dart.assertFailed(null, I[4], 339, 12, "_extractJavascriptChannelNames(channels).length == channels.length");
+    }
+  };
+  (base.FlutterWebviewPlugin.private = function(_channel) {
+    this[_onBack$] = T.StreamControllerOfNull().broadcast();
+    this[_onDestroy] = T.StreamControllerOfNull().broadcast();
+    this[_onUrlChanged] = T.StreamControllerOfString().broadcast();
+    this[_onStateChanged$] = T.StreamControllerOfWebViewStateChanged().broadcast();
+    this[_onScrollXChanged] = T.StreamControllerOfdouble().broadcast();
+    this[_onScrollYChanged] = T.StreamControllerOfdouble().broadcast();
+    this[_onProgressChanged] = T.StreamControllerOfdouble().broadcast();
+    this[_onHttpError] = T.StreamControllerOfWebViewHttpError().broadcast();
+    this[_onPostMessage] = T.StreamControllerOfJavascriptMessage().broadcast();
+    this[_javascriptChannels] = new (T.IdentityMapOfString$JavascriptChannel()).new();
+    this[_channel$] = _channel;
+    this[_channel$].setMethodCallHandler(dart.bind(this, _handleMessages));
+  }).prototype = base.FlutterWebviewPlugin.prototype;
+  dart.addTypeTests(base.FlutterWebviewPlugin);
+  dart.addTypeCaches(base.FlutterWebviewPlugin);
+  dart.setMethodSignature(base.FlutterWebviewPlugin, () => ({
+    __proto__: dart.getMethods(base.FlutterWebviewPlugin.__proto__),
+    [_handleMessages]: dart.fnType(async.Future$(core.Null), [message_codec.MethodCall]),
+    launch: dart.fnType(async.Future$(dart.void), [core.String], {allowFileURLs: core.bool, appCacheEnabled: core.bool, clearCache: core.bool, clearCookies: core.bool, debuggingEnabled: core.bool, displayZoomControls: core.bool, enableAppScheme: core.bool, geolocationEnabled: core.bool, headers: dart.nullable(core.Map$(core.String, core.String)), hidden: core.bool, ignoreSSLErrors: core.bool, invalidUrlRegex: dart.nullable(core.String), javascriptChannels: core.Set$(javascript_channel.JavascriptChannel), localUrlScope: dart.nullable(core.String), mediaPlaybackRequiresUserGesture: core.bool, rect: dart.nullable(ui.Rect), scrollBar: core.bool, supportMultipleWindows: core.bool, useWideViewPort: core.bool, userAgent: dart.nullable(core.String), withJavascript: core.bool, withLocalStorage: core.bool, withLocalUrl: core.bool, withOverviewMode: core.bool, withZoom: core.bool}, {}),
+    evalJavascript: dart.fnType(async.Future$(dart.nullable(core.String)), [core.String]),
+    close: dart.fnType(async.Future$(dart.void), []),
+    reload: dart.fnType(async.Future$(dart.void), []),
+    goBack: dart.fnType(async.Future$(dart.void), []),
+    canGoBack: dart.fnType(async.Future$(core.bool), []),
+    canGoForward: dart.fnType(async.Future$(core.bool), []),
+    goForward: dart.fnType(async.Future$(dart.void), []),
+    hide: dart.fnType(async.Future$(dart.void), []),
+    show: dart.fnType(async.Future$(dart.void), []),
+    clearCache: dart.fnType(async.Future$(dart.void), []),
+    reloadUrl: dart.fnType(async.Future$(dart.void), [core.String], {headers: dart.nullable(core.Map$(core.String, core.String))}, {}),
+    cleanCookies: dart.fnType(async.Future$(dart.void), []),
+    stopLoading: dart.fnType(async.Future$(dart.void), []),
+    dispose: dart.fnType(dart.void, []),
+    getCookies: dart.fnType(async.Future$(core.Map$(core.String, core.String)), []),
+    resize: dart.fnType(async.Future$(dart.void), [ui.Rect]),
+    [_extractJavascriptChannelNames]: dart.fnType(core.Set$(core.String), [core.Set$(javascript_channel.JavascriptChannel)]),
+    [_handleJavascriptChannelMessage]: dart.fnType(dart.void, [core.String, core.String]),
+    [_assertJavascriptChannelNamesAreUnique]: dart.fnType(dart.void, [dart.nullable(core.Set$(javascript_channel.JavascriptChannel))])
+  }));
+  dart.setGetterSignature(base.FlutterWebviewPlugin, () => ({
+    __proto__: dart.getGetters(base.FlutterWebviewPlugin.__proto__),
+    onDestroy: async.Stream$(core.Null),
+    onBack: async.Stream$(core.Null),
+    onUrlChanged: async.Stream$(core.String),
+    onStateChanged: async.Stream$(base.WebViewStateChanged),
+    onProgressChanged: async.Stream$(core.double),
+    onScrollYChanged: async.Stream$(core.double),
+    onScrollXChanged: async.Stream$(core.double),
+    onHttpError: async.Stream$(base.WebViewHttpError)
+  }));
+  dart.setLibraryUri(base.FlutterWebviewPlugin, I[3]);
+  dart.setFieldSignature(base.FlutterWebviewPlugin, () => ({
+    __proto__: dart.getFields(base.FlutterWebviewPlugin.__proto__),
+    [_channel$]: dart.finalFieldType(platform_channel.MethodChannel),
+    [_onBack$]: dart.finalFieldType(async.StreamController$(core.Null)),
+    [_onDestroy]: dart.finalFieldType(async.StreamController$(core.Null)),
+    [_onUrlChanged]: dart.finalFieldType(async.StreamController$(core.String)),
+    [_onStateChanged$]: dart.finalFieldType(async.StreamController$(base.WebViewStateChanged)),
+    [_onScrollXChanged]: dart.finalFieldType(async.StreamController$(core.double)),
+    [_onScrollYChanged]: dart.finalFieldType(async.StreamController$(core.double)),
+    [_onProgressChanged]: dart.finalFieldType(async.StreamController$(core.double)),
+    [_onHttpError]: dart.finalFieldType(async.StreamController$(base.WebViewHttpError)),
+    [_onPostMessage]: dart.finalFieldType(async.StreamController$(javascript_message.JavascriptMessage)),
+    [_javascriptChannels]: dart.finalFieldType(core.Map$(core.String, javascript_channel.JavascriptChannel))
+  }));
+  dart.defineLazy(base.FlutterWebviewPlugin, {
+    /*base.FlutterWebviewPlugin._instance*/get _instance() {
+      return null;
+    },
+    set _instance(_) {}
+  }, false);
+  var type$ = dart.privateName(base, "WebViewStateChanged.type");
+  var url$0 = dart.privateName(base, "WebViewStateChanged.url");
+  var navigationType$ = dart.privateName(base, "WebViewStateChanged.navigationType");
+  base.WebViewStateChanged = class WebViewStateChanged extends core.Object {
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get url() {
+      return this[url$0];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get navigationType() {
+      return this[navigationType$];
+    }
+    set navigationType(value) {
+      super.navigationType = value;
+    }
+    static fromMap(map) {
+      let t = null;
+      switch (map[$_get]("type")) {
+        case "shouldStart":
+        {
+          t = base.WebViewState.shouldStart;
+          break;
+        }
+        case "startLoad":
+        {
+          t = base.WebViewState.startLoad;
+          break;
+        }
+        case "finishLoad":
+        {
+          t = base.WebViewState.finishLoad;
+          break;
+        }
+        case "abortLoad":
+        {
+          t = base.WebViewState.abortLoad;
+          break;
+        }
+        default:
+        {
+          dart.throw(new core.UnimplementedError.new("WebViewState type \"" + dart.str(map[$_get]("type")) + "\" is not supported."));
+        }
+      }
+      return new base.WebViewStateChanged.new(t, core.String.as(map[$_get]("url")), core.int.as(map[$_get]("navigationType")));
+    }
+  };
+  (base.WebViewStateChanged.new = function(type, url, navigationType) {
+    this[type$] = type;
+    this[url$0] = url;
+    this[navigationType$] = navigationType;
+    ;
+  }).prototype = base.WebViewStateChanged.prototype;
+  dart.addTypeTests(base.WebViewStateChanged);
+  dart.addTypeCaches(base.WebViewStateChanged);
+  dart.setLibraryUri(base.WebViewStateChanged, I[3]);
+  dart.setFieldSignature(base.WebViewStateChanged, () => ({
+    __proto__: dart.getFields(base.WebViewStateChanged.__proto__),
+    type: dart.finalFieldType(base.WebViewState),
+    url: dart.finalFieldType(core.String),
+    navigationType: dart.finalFieldType(core.int)
+  }));
+  var url$1 = dart.privateName(base, "WebViewHttpError.url");
+  var code$ = dart.privateName(base, "WebViewHttpError.code");
+  base.WebViewHttpError = class WebViewHttpError extends core.Object {
+    get url() {
+      return this[url$1];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get code() {
+      return this[code$];
+    }
+    set code(value) {
+      super.code = value;
+    }
+  };
+  (base.WebViewHttpError.new = function(code, url) {
+    this[code$] = code;
+    this[url$1] = url;
+    ;
+  }).prototype = base.WebViewHttpError.prototype;
+  dart.addTypeTests(base.WebViewHttpError);
+  dart.addTypeCaches(base.WebViewHttpError);
+  dart.setLibraryUri(base.WebViewHttpError, I[3]);
+  dart.setFieldSignature(base.WebViewHttpError, () => ({
+    __proto__: dart.getFields(base.WebViewHttpError.__proto__),
+    url: dart.finalFieldType(core.String),
+    code: dart.finalFieldType(core.String)
+  }));
+  dart.defineLazy(base, {
+    /*base._kChannel*/get _kChannel() {
+      return "flutter_webview_plugin";
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter_webview_plugin/src/webview_scaffold.dart", {
+    "package:flutter_webview_plugin/src/webview_scaffold.dart": webview_scaffold,
+    "package:flutter_webview_plugin/src/javascript_channel.dart": javascript_channel,
+    "package:flutter_webview_plugin/src/base.dart": base,
+    "package:flutter_webview_plugin/flutter_webview_plugin.dart": flutter_webview_plugin
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["webview_scaffold.dart","javascript_channel.dart","base.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter_webview_plugin/src/webview_scaffold.dart.lib.js"}');
+  // Exports:
+  return {
+    src__webview_scaffold: webview_scaffold,
+    src__javascript_channel: javascript_channel,
+    src__base: base,
+    flutter_webview_plugin: flutter_webview_plugin
+  };
+}));
+
+//# sourceMappingURL=webview_scaffold.dart.lib.js.map

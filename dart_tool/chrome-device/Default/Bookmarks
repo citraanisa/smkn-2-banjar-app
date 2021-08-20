@@ -1,0 +1,208 @@
+{
+   "checksum": "a942bfb3af9a2d96f29e428df2e848ac",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13270657682593145",
+            "guid": "bd44cbea-53de-4630-90d9-07a1f91209da",
+            "id": "44",
+            "name": "Download Dailymotion Videos, Facebook Video, Vimeo, Twitter Video, Instagram, TikTok and more! - SAVEVIDEO.ME",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://savevideo.me/"
+         }, {
+            "date_added": "13270658025602620",
+            "guid": "2c1280df-5c31-455f-a73d-c7f1bbe0f97e",
+            "id": "45",
+            "name": "Save Video Me",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "javascript:(function(){appPath%20=%20'https://savevideo.me/';function%20l(u,i,t,b){var%20d=document;if(!d.getElementById(i)){var%20s=d.createElement('script');s.src=u;s.id=i;d.body.appendChild(s)}s=setInterval(function(){u=0;try{u=t.call()}catch(i){}if(u){clearInterval(s);b.call()}},200)}l('https://savevideo.me/js/bookmarklet.js','SV',function(){return!!(typeof%20bookmarklet=='function')},%20function(){bookmarklet()})})()"
+         }, {
+            "date_added": "13271827611253373",
+            "guid": "35f66524-9bd9-4286-a475-dd0dc7c3f747",
+            "id": "46",
+            "name": "SMTOWN 신곡 포스트",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://m.post.naver.com/my.naver?memberNo=41350603"
+         }, {
+            "date_added": "13272531177189436",
+            "guid": "8915f850-003f-45fe-9322-5e7461d84192",
+            "id": "47",
+            "name": "Mobile App Editor – WordPress to Android App Builder – WordPress plugin | WordPress.org",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://wordpress.org/plugins/mobile-app-editor/"
+         }, {
+            "date_added": "13272531180771856",
+            "guid": "0fbb0b22-2375-4adf-88f3-04769af420b4",
+            "id": "48",
+            "name": "Reference | REST API Handbook | WordPress Developer Resources",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://developer.wordpress.org/rest-api/reference/"
+         }, {
+            "date_added": "13272531374734119",
+            "guid": "355c0271-e473-4553-a970-e3e7fdb69b5e",
+            "id": "49",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/posts",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/posts"
+         }, {
+            "date_added": "13272531510365831",
+            "guid": "15a44daa-0fa4-45f5-908d-43665dd48b16",
+            "id": "50",
+            "name": "Adding Custom Endpoints | REST API Handbook | WordPress Developer Resources",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/"
+         }, {
+            "date_added": "13272532414926581",
+            "guid": "b43e2f79-3a86-4b6c-a131-da00c31c0b86",
+            "id": "51",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/civitas/",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/civitas/"
+         }, {
+            "date_added": "13272532441907391",
+            "guid": "cf7ccf45-25d0-4d23-83b0-0daf4f66573f",
+            "id": "52",
+            "name": "Posts | REST API Handbook | WordPress Developer Resources",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://developer.wordpress.org/rest-api/reference/posts/#list-posts"
+         }, {
+            "date_added": "13272532495836274",
+            "guid": "9841aa7b-f621-4613-a6b8-32121fa2d590",
+            "id": "53",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/civitas/?per_page=1",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/civitas/?per_page=1"
+         }, {
+            "date_added": "13272533150243648",
+            "guid": "7bfd91bf-f5f9-4e5c-8bc4-4cac75d6679e",
+            "id": "54",
+            "name": "Custom post types filtered by taxonomy using REST API v2 - WordPress Development Stack Exchange",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://wordpress.stackexchange.com/questions/275543/custom-post-types-filtered-by-taxonomy-using-rest-api-v2"
+         }, {
+            "date_added": "13272533243875725",
+            "guid": "4a606b93-9366-4fc3-ae40-81c33c88d865",
+            "id": "55",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/taxonomies",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/taxonomies"
+         }, {
+            "date_added": "13272533998499569",
+            "guid": "238ace17-a522-4d4e-b487-2829470a93a4",
+            "id": "56",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/semester",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/semester"
+         }, {
+            "date_added": "13272534001675471",
+            "guid": "defc081e-fbad-4888-8991-f4612f37f381",
+            "id": "57",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/"
+         }, {
+            "date_added": "13272534004203380",
+            "guid": "96993e55-d1b7-4818-82c8-fa75e04a5769",
+            "id": "58",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/tipe_pelajaran",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/tipe_pelajaran"
+         }, {
+            "date_added": "13272534008379678",
+            "guid": "0184e58c-971f-4c34-9dbc-503fed1ef2ee",
+            "id": "59",
+            "name": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/pelajaran",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://smkn2banjar-jabar.sch.id/wp-json/wp/v2/pelajaran"
+         }, {
+            "date_added": "13272535813203790",
+            "guid": "f82a81eb-fb36-49ce-818c-559139a433e2",
+            "id": "60",
+            "name": "Build Android & IOS App For Wordpress Blog with Flutter - YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/watch?v=H_f9r_QwoXg"
+         }, {
+            "date_added": "13273681326591589",
+            "guid": "739c0f90-3187-44d3-bb21-4868c5102577",
+            "id": "61",
+            "name": "Form Presensi Mata Kuliah Program Studi Informatika",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfW9pOj-_pE4wpT-46VoI3yfe5g7iWwI9SbXu9Vkzbmd5dksw/viewform"
+         }, {
+            "date_added": "13273741815781865",
+            "guid": "b8b34b4f-a4a1-422e-95a6-5fcfe55cd7df",
+            "id": "62",
+            "name": "Responsive Blog Theme using Flutter | Web, macOS, Android, iOS - YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/watch?v=YvGX4h7Bpic"
+         } ],
+         "date_added": "13273829383149242",
+         "date_modified": "13273741815781865",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13273829383149245",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13273829383149248",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "Ci4KDgiIgQISCNvF7157AQAAEgAgASoYVllpa2Fnb1pjVERNYmk1Z2xKTXJjUT09EqkBCD0SpAEKHFltOVFhYlhMUlROVzZVbElMem1aQ1F4OGRsND0SJDczOWMwZjkwLTMxODctNDRkMy1iYjIxLTQ4NjhjNTEwMjU3NxgAIAAoADCNnOSitS84/5PkorUvQP+T5KK1L0ocZllKcDZYUEorcjZ2a1BzUFFHN3pEeTdEN1gwPVogIh7//2hhM1FrNEt0RmNEMDRpZCtLMGlyUEh0TjZ2TT1lo60cXxKpAQg5EqQBChxTTjRwenVBUkpVTHF3aGpsM2pYTnprSEMxOGM9EiRkZWZjMDgxZS1mYmFkLTQ4ODgtODk5MS1mNDYxMmYzN2YzODEYACAAKAAw5IzZ/7AvOIuA2f+wL0CLgNn/sC9KHE0vNUxZQ0xqMEV4bU9vTDVyT3pGaDdpYUZ6MD1aICIe//ZLUHJqUk9GUG92UWdEcjdQY0ZNL2hkZ0c2M3M9ZQAAAAASqQEINxKkAQocc1ZJcG5nOTZLU3UrbW1pVEdpQWZrbzZXa0ZBPRIkNGE2MDZiOTMtOTM2Ni00ZmMzLWFlNDAtODFjMzNjODhkODY1GAAgACgAML7sqv+wLzjj36r/sC9A49+q/7AvShx0QlJlTzFvMlVVTnFhdkc2TVlOcmVqS1lOMTQ9WiAiHv/bblNPbVJtekVQd083OXdLSUZieDl5RFdPWjM4PWUAAAAAEqkBCDoSpAEKHHVjMGdBN3RLRWdPWDNHTWFRaTQ4czYwQis4bz0SJDk2OTkzZTU1LWQxYjctNDgxOC04MmM4LWZhNzVlMDRhNTc2ORgAIAAoADC4oNn/sC8465PZ/7AvQOuT2f+wL0occ0UwSUREYitZQkxKMjZwMHhMT05CSEtOV0c0PVogIh7/+29LcC9ZQ292WmI1dHMvWG92ZzRyY3owT2M2ND1lAAAAABKpAQg2EqQBChxqb1VXeGZGSE9wc1BEVTR4ZXcxN1FGTGlyeWc9EiQ3YmZkOTFiZi1mNWY5LTRlNWMtOGJjNC00Y2FjNzVkNjY3OWUYACAAKAAwxpOl/7AvOKOEpf+wL0CjhKX/sC9KHG5tVGQ5NUdtK2NsUk1qdm5rZjdlRlkwSFpGYz1aICIe/7ZCdHlsbHJ5c2FFSnFQUmZObzAzWnJIbjQ0eVU9ZeqgFhASqAEINBKjAQocTDh2WEtIdWdZVVNLY0ExNERxODBGWGs3VHpBPRIkY2Y3Y2NmNDUtMjVkMC00ZDIzLTgzYjAtMGRhZjRmNjY1NzNmGAAgACgAMIrz+f6wLziz5vn+sC9As+b5/rAvShxYaGREUHppa3FWRUxRN2hzZzhjMlRDTWpPQXM9Wh8iHf5hR2VrRzBWZ284bnplcVJjN0piSUhuaXRJVWM9ZRVgnaESqAEIMhKjAQocd1pTZHZDWFQ5U1kvSHFVVE10NFpPYVFyandBPRIkMTVhNDRkYWEtMGZhNC00NWY1LTkwOGQtNDM2NjVkZDQ4YjE2GAAgAigCMJqPv/e1Lzjl+MD+sC9Az5W/97UvShxJUkpEOG9jVVRSTlZ6LzVDaWlQT3BKdk83TlU9Wh8iHftub1ozMUxEd2UzV2tZcGpWTSsrSnZDVndNa1U9ZRVgnaESiwEIAhKGAQocekRWR3JydFpMZE0rNEJUeWJnK0hDT3JXZ3lvPRIkNDgwZGFhY2QtZWU5Ni01ZTgwLTk4YzctMjljZjU3YzQwYTBlGAAgACgAMJCFl5WILziNgJeViC9AjYCXlYgvShw1dXN5L2NwZnBpMUV0b0JIRGdYSXMwcWI0ckE9WgIiAGUAAAAAEqgBCDMSowEKHEJjZUc2NS9uY3haQURkb2llK250eE1DZ09NVT0SJGI0M2UyZjc5LTNhODYtNGI2Yy1hMTMxLWRhMDBjMzFjMGI4NhgAIAAoADD4ovj+sC840JP4/rAvQNCT+P6wL0ocdzJiZEJJRjM5NWJzb1BxS2JMY0F2dXlvSnVRPVofIh39MlU4OFJYZ1d5MDNPd0VJUU9BcXo1OXZIRDVvPWUAAAAAEqgBCDESowEKHFJGUGJjOFpsdllKa3Z3RHpLcDMwNTBSRVd2ND0SJDM1NWMwMjcxLWU0NzMtNDU1My1hOTcwLWUzZTdmZGI2OWI1ZRgAIAAoADC35bj+sC84mNW4/rAvQJjVuP6wL0oca1lTN2ZvdnovcEdZQnZIUG5idGtOaTBaMkNJPVofIh33Y2ExU0F5VnIvMjFQM0d4Mi82aE9QRGJYOUVBPWUAAAAAEqkBCD4SpAEKHE95akZXM3VWMk9sYlBpQldyN0NjQkpDb2N0VT0SJGI4YjM0YjRmLWE0YTEtNDIyZS05NWE2LTVmY2ZlNTVjZDdkZhgAIAAoADDZpdC/tS845o/Qv7UvQOaP0L+1L0ocaDZkSjBicVhTU012OHNseVA4dEliZUR3YTV3PVogIh7//2hrNVJVQy9wM0MwQ05Cazd3MUozTFFyMEJuYz1lOPk5MxKoAQgvEqMBChxvOUVDa1YvRm1MWFkwK2xxTFdlbnhyN0NPclU9EiQ4OTE1Zjg1MC0wMDNmLTQ1ZmUtOTMyMi01ZTc0NjFkODQxOTIYACACKAIwmo+/97UvOOrNrP6wL0Cblb/3tS9KHEdWLzFqaUdBRVBLbytxa01yT3duek8wU3E3Yz1aHyId3UpDUndzaDJsS1FFUENjQXVSNDNXMDN4ZzFPVT1lFWCdoRKnAQgtEqIBChxzMkZpanU3b1Uxb2tFZmx3SFdHNktmNmdrOGc9EiQyYzEyODBkZi01YzMxLTQ1NWYtYTczZC1jN2YxYmJlMGY5N2UYACAAKAAwyd2UgaovOIPBlIGqL0CDwZSBqi9KHFhML3R2NWREaGxkM0NmamZVemM0ZVBwNUY1ST1aHiIcdnNmQm54ZWs5V2hYWXBSOHdjL2ZRa2d6c09FPWUAAAAAEqkBCDwSpAEKHEd1emFYYmcyaEpVZE5EOVY4WkF1SzM2RkpMcz0SJGY4MmE4MWViLWZiMzYtNDljZS04MThjLTU1OTEzOWE0MzNlMhgAIAAoADDY2seAsS841MjHgLEvQNTIx4CxL0ocN244cW9TK0s2bG15bXkrVVVGMHJCdDMwMkFFPVogIh7//nNUL05pbnRlYnplQkpWaHhHY0Y5Y0ZYcDlDaz1lOPk5MxKoAQguEqMBChwxT3V0ZEhvNFpuaHJrajNBeVV1bzNqcFlwTjQ9EiQzNWY2NjUyNC05YmQ5LTQyODYtYTQ3NS1kZDBkYzdjM2Y3NDcYACACKAIwmo+/97UvOPes7q6uL0CZlb/3tS9KHElBa3ZIOUoxVjJHMDhhUFd6SEphOURjcEtpWT1aHyIdu2kvRVd2SmVqVHRGRDFLVUplYnVYTEpxMGUyRT1ly+/IBRKoAQg1EqMBChxXQlUwZlBwbHpsbjhKTFVJYzkxWjNEbG92bUk9EiQ5ODQxYWE3Yi1mNjIxLTQ2MTMtYTZiOC0zMjEyMWZhMmQ1OTAYACAAKAAwkJj9/rAvONyL/f6wL0Dci/3+sC9KHEw0aERzUlJoc2c5Sy9lL0NGRWRrb0NLL1Fqdz1aHyId/2xQdlFDNG5DL1d3aXhtbXhHNkdJL1drZk1odz1lAAAAABKLAQgBEoYBChwvRUtMYVVVeU1kYktFazFCYTJVaW55RG5mN0k9EiQzOGE1OTMwMy05OWM2LTU2NDgtOTJhNS04M2Y2MjQ2YzZmYWUYACAAKAAwj4WXlYgvOI2Al5WIL0CNgJeViC9KHFUrR0dJdFpFRHBac0lTbE9VYUlUdUlMZE1uST1aAiIAZQAAAAASpwEILBKiAQocVlhPekZCTjBRZ3VRZ0NvOGpuNUU3T3pmOHh3PRIkYmQ0NGNiZWEtNTNkZS00NjMwLTkwZDktMDdhMWY5MTIwOWRhGAAgAigCMJqPv/e1Lziiyf+Aqi9AmJW/97UvShxGaW9EaGI1QjRDN0VpTlZlL1R2NzAwcTJpbG89Wh4iHEdrY1Z5SHdaZXNPZ0hSQ1dwek03cTJsZ1lCcz1lqg8jeBKpAQg4EqQBChw4UDY1Z2wxMFpXMjhRNENhcExTNERkU3MvNmc9EiQyMzhhY2UxNy1hNTIyLTRkNGUtYjQ4Ny0yODI5NDcwYTkzYTQYACAAKAAw5PfY/7AvOKPn2P+wL0Cj59j/sC9KHDROSEtuNFVnNnN4MWlmU0JoelVBelJNUENPZz1aICIe/+13WlpNM0NsWG55b0tWWGxIaVN3Zk45V3ZXcUE9ZQAAAAASqAEIMBKjAQocWEczbWVXL1VBc040ejJTUjlnb2dXTlZGOUtNPRIkMGZiYjBiMjItMjM3NS00YWRmLTg4ZjMtMDQ3NjlhZjQyMGI0GAAgAigCMJqPv/e1Lzjl6az+sC9AnJW/97UvShx4eHIvRytMNzNMMzZwRnV2Z2swTm9Ra2FiZTg9Wh8iHe45Z3J6SXBrbGlHLzczV1ptbXpOU2pHU29BK3M9ZRVgnaESqQEIOxKkAQocUFBOcFZxNHRId21NY1AxOFQybGdwUlpmVlJrPRIkMDE4NGU1OGMtOTcxZi00YzM0LTlkYmMtNTAzZmVkMWVmMmVlGAAgACgAMKPB2f+wLzi7tNn/sC9Au7TZ/7AvShxaTHJic1FLQWNwZTNFaVJyOGZtVGhDRXkyNHc9WiAiHv/9VWgwK3dzeVY2em9vU0RZNkpNSUlEa3h4ZFhJPWUAAAAAEosBCAMShgEKHHk1V0UyN3VJNnZYL0RlSVNISnpuak1xdVdXcz0SJGM2N2RkMmI3LWI0MGEtNWQ0Yi04ZjQ2LTQwYWU1MDVjNzFjZhgAIAAoADCUhZeViC84jYCXlYgvQI2Al5WIL0ocNzlsK0xSRVVwaWFFdkREK0c0M2NwWFN0d0JjPVoCIgBlAAAAABgAIMiWv/e1LygA",
+   "version": 1
+}
